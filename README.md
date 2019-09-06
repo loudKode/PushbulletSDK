@@ -17,7 +17,7 @@ Dim rslt = PushbulletSDK.GetToken.Get_Token("ClientID", "RedirectUrl")
 
 **set client**
 ```vb.net
-Dim rslt = PushbulletSDK.GetToken.Get_Token("ClientID", "RedirectUrl")
+Dim cLENT As PushbulletSDK.IClient = New PushbulletSDK.PClient("token")
 ```
 
 **List Devices**
