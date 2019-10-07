@@ -54,12 +54,12 @@ Next
 
 **create new Device**
 ```vb.net
-Dim RSLT = Await cLENT.Device.Create("name", "win10", "micro", "1.0.0", PushbulletSDK.utilitiez.iconEnum.desktop, Nothing)
+Dim RSLT = Await cLENT.Device.Create("name", "win10", "micro", "1.0.0", iconEnum.desktop, Nothing)
 ```
 
 **update Device**
 ```vb.net
-Dim RSLT = Await cLENT.Device.Update("device ID", "name", "win10", "micro", "1.0.0", PushbulletSDK.utilitiez.iconEnum.desktop, Nothing)
+Dim RSLT = Await cLENT.Device.Update("device ID", "name", "win10", "micro", "1.0.0", iconEnum.desktop, Nothing)
 ```
 
 **delete Device**
@@ -91,31 +91,31 @@ Dim mute_unmute_channel = Await cLENT.Channel.Mute("channel ID", True)
 **Send Push To Device**
 ```vb.net
 Dim psend = New PushbulletSDK.Pushes With {.note_push = New PushbulletSDK.Pushes._Note With {.title = "test titel", .body = "this is test body first time."}}
-Dim RSLT = Await cLENT.Push.SendToDevice("device ID", PushbulletSDK.utilities.PushTypesEnum.note, psend)
+Dim RSLT = Await cLENT.Push.SendToDevice("device ID", PushTypesEnum.note, psend)
 DataGridView1.Rows.Add(RSLT.isExists)
 ```
 
 **Send Push To All App Users**
 ```vb.net
 Dim psend = New PushbulletSDK.Pushes With {.note_push = New PushbulletSDK.Pushes._Note With {.title = "test titel", .body = "this is test body first time."}}
-Dim RSLT = Await cLENT.SendToAllAppUsers("APP CLIENT ID", PushbulletSDK.Putilities.PushTypesEnum.note, psend)
+Dim RSLT = Await cLENT.SendToAllAppUsers("APP CLIENT ID", PushTypesEnum.note, psend)
 DataGridView1.Rows.Add(RSLT.title)
 ```
 
 **Send Push To Mail**
 ```vb.net
 Dim psend = New PushbulletSDK.Pushes With {.note_push = New PushbulletSDK.Pushes._Note With {.title = "test titel", .body = "this is test body first time."}}
-Dim RSLT = Await cLENT.Push.SendToDevice("xxxx@gmail.com", PushbulletSDK.utilities.PushTypesEnum.note, psend)
+Dim RSLT = Await cLENT.Push.SendToDevice("xxxx@gmail.com", PushTypesEnum.note, psend)
 DataGridView1.Rows.Add(RSLT.isExists)
 
-Dim psend = New PushbulletSDK.Pushes With {.link_push = New PushbulletSDK.Pushes._Link With {.title = "test titel", .type = PushbulletSDK.utilitiez.PushTypesEnum.link, .body = "look at this", .url = "https://www.youtube.com/watch?v=7b_EgKWYn5c"}}
-Dim RSLT = Await cLENT.Push.SendToEmail("unlimitedillegal.tk@gmail.com", PushbulletSDK.utilitiez.PushTypesEnum.link, psend)
+Dim psend = New PushbulletSDK.Pushes With {.link_push = New PushbulletSDK.Pushes._Link With {.title = "test titel", .type = PushTypesEnum.link, .body = "look at this", .url = "https://www.youtube.com/watch?v=7b_EgKWYn5c"}}
+Dim RSLT = Await cLENT.Push.SendToEmail("unlimitedillegal.tk@gmail.com", PushTypesEnum.link, psend)
 DataGridView1.Rows.Add(RSLT.title, RSLT.CreatedDate)
 ```
 
 **Send Push To channel**
 ```vb.net
-Dim RSLT = Await cLENT.Push.SendToChannel("channel tag", PushbulletSDK.utilitiez.PushTypesEnum.link, psend)
+Dim RSLT = Await cLENT.Push.SendToChannel("channel tag", PushTypesEnum.link, psend)
 ```
 
 **List Pushs**
@@ -149,7 +149,7 @@ Dim prog_Report As New Progress(Of PushbulletSDK.ReportStatus)(Sub(ReportClass A
          ProgressBar1.Value = CInt(ReportClass.ProgressPercentage)
          Label2.Text = If(CStr(ReportClass.TextStatus) Is Nothing, "Uploading...", CStr(ReportClass.TextStatus))
          End Sub)
-Dim RSLT = Await cLENT.Push.Upload("J:\New.jpg", PushbulletSDK.utilitiez.UploadTypes.FilePath, "New.jpg", prog_Report, Nothing, UploadCancellationToken.Token)
+Dim RSLT = Await cLENT.Push.Upload("J:\New.jpg", UploadTypes.FilePath, "New.jpg", prog_Report, Nothing, UploadCancellationToken.Token)
 DataGridView1.Rows.Add(RSLT)
 End If
 Catch ex As PushbulletSDK.PushbulletException
