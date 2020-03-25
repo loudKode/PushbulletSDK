@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>PushbulletSDK is a .Net library for Pushbullet.com file hosting service.</Description>
+    <Copyright>Copyright © 2019 DeQmaTech LLC.</Copyright>
+    <AssemblyTitle>PushbulletSDK</AssemblyTitle>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <VersionPrefix>1.3.2</VersionPrefix>
+    <Title>PushbulletSDK</Title>
+    <Authors>DeQmaTech LLC.</Authors>
+    <AssemblyName>PushbulletSDK</AssemblyName>
+    <PackageProjectUrl>https://github.com/loudKode/PushbulletSDK</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/loudKode/PushbulletSDK/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageTags>Pushbullet;netstandard;cloud-storage</PackageTags>
+    <RepositoryUrl>https://github.com/loudKode/PushbulletSDK</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RootNamespace>PushbulletSDK</RootNamespace>
+    <TargetFrameworks>netstandard2.0;netcoreapp2.1;net452</TargetFrameworks>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <TargetFrameworks>netstandard2.0;netcoreapp2.1;net452</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
+    <PackageReference Include="System.Net.Http" Version="4.3.3" />
+  </ItemGroup>
+
+</Project>
