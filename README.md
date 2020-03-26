@@ -1,33 +1,68 @@
-## PushbulletSDK ##
+## PushbulletSDK
 
 `Download:`[https://github.com/loudKode/PushbulletSDK/releases](https://github.com/loudKode/PushbulletSDK/releases)<br>
+`Help:`[https://github.com/loudKode/PushbulletSDK/wiki](https://github.com/loudKode/PushbulletSDK/wiki)<br>
 `NuGet:`
 [![NuGet](https://img.shields.io/nuget/v/DeQmaTech.PushbulletSDK.svg?style=flat-square&logo=nuget)](https://www.nuget.org/packages/DeQmaTech.PushbulletSDK)<br>
 
-# Functions:
-* UserInfo	
-* Device - Delete
-* Device - Create
-* Device - Update
-* Device - List
-* Channel - Mute
-* Channel - Leave
-* Channel - Join
-* Channel - List
-* Push - Upload
-* Push - List
-* Push - SendToDevice
-* Push - SendToEmail
-* Push - SendToChannel
-* Push - SendToAllAppUsers
-* Push - MarkedAsSeen
-* Push - Delete
-* Push - Clear
+<table>
+<tr>
+<td>
+<a href="https://visualstudio.microsoft.com/vs/older-downloads/"><img src="https://i.postimg.cc/3wXQcjjG/VS2017-Banner.png"></a>
+<br />
+<a href="https://visualstudio.microsoft.com/vs/older-downloads/">Visual Studio 2017</a>
+</td>
+<td><a href="https://www.nuget.org/packages/DeQmaTech.PushbulletSDK"><img src="https://i.postimg.cc/gjYM286f/Nuget-logo1.png"></a>
+<br />
+<a href="https://www.nuget.org/packages/DeQmaTech.PushbulletSDK">nuget</a>
+</td>
+<td><a href="https://github.com/loudKode/PushbulletSDK/releases"><img src="https://i.postimg.cc/TPXsYk57/dot-net-png-7.png"></a>
+<br />
+<a href="https://github.com/loudKode/PushbulletSDK/releases">4.5.2 / 2.0 / 2.1</a>
+</td>
+</table>
 
-# Example:
+
+# Features
+* Assemblies for .NET 4.5.2 and .NET Standard 2.0 and .NET Core 2.1
+* Just one external reference (Newtonsoft.Json)
+* Easy installation using NuGet
+* Upload/Download tracking support
+* Proxy Support
+* Upload/Download cancellation support
+
+# List of functions:
+> **Token**
+> * GetToken
+
+> **Device**	
+> * Delete
+> * Create
+> * Update
+> * List
+
+> **Channel**
+> * Mute
+> * Leave
+> * Join
+> * List
+
+> **Push**
+> * Upload
+> * List
+> * SendToDevice
+> * SendToEmail
+> * SendToChannel
+> * SendToAllAppUsers
+> * MarkedAsSeen
+> * Delete
+> * Clear
+
+
+# Code simple:
 **get access token**
 ```vb.net
-Dim rslt = PushbulletSDK.GetToken.Get_Token("ClientID", "RedirectUrl")
+Dim rslt = PushbulletSDK.Authentication.GetToken("ClientID", "RedirectUrl")
 ```
 
 **set client**
